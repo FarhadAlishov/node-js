@@ -1,73 +1,96 @@
 //FUNCTIONS
 
-// function sayHello(name) {
-//     console.log('Hello ' + name);
-// }
-
-// sayHello('Mosh');
-
-// console.log(); // global
-
-// var message = '';
-// console.log(global.message);
-
-// var sayHello = function(){
-// }
-
-// window.sayHello();
+    // function sayHello(name) {
+    //     console.log('Hello ' + name);
+    // }
+    // sayHello('Mosh');
 
 
-// console.log(module);
+// GLOBALS  - NO WINDOW !!!!
 
-// const logger = require('./logger');
-// console.log(logger);
-// logger('message');
+    // __dirname  - path to current directory
+    // __filename - file name
+    // require    - function to use modules (CommonJS)
+    // module     - info about current module (file)
+    // process    - info about env where the program is being executed
+
+
+    // console.log(module);
+
+    // const logger = require('./logger');
+    // console.log(logger);
+    // logger('message');
 
 
 
 
 //CREATE SERVER
 
-const http = require('http');
+    // const http = require('http');
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.writeHead(200);
-        res.write('<h1>Hello Node!!!!</h1>\n');
-        res.end();
-    }
+    // const server = http.createServer((req, res) => {
+    //     if (req.url === '/') {
+    //         res.writeHead(200);
+    //         res.write('<h1>Hello Node!!!!</h1>\n');
+    //         res.end();
+    //     }
 
-    if (req.url === '/api/courses') {
-        res.write(JSON.stringify([1,2,3]));
-        res.end;
-    }
-}).listen(3000);
+    //     if (req.url === '/api/courses') {
+    //         res.write(JSON.stringify([1,2,3]));
+    //         res.end;
+    //     }
+    // }).listen(3000);
 
-console.log('Server running at http://localhost:3000');
-
-
-var fs = require('fs');
-
-console.log('Before');
-fs.readFile('./', function (error,data) {
-  console.log('** During! **');
-});
-console.log('After');
-
-// //EXTERNAL HTTP CALLS
-
-// var http = require('http');
-
-// http.request({
-//     host: 'www.google.com',
-//     method: 'GET',
-//     path: "/"
-// }, 
-// function(response) {
-//     response.setEncoding("utf8");
-//     response.on("readable", function() {
-//         console.log(response.read())
-//     });
-// }).end();
+    // console.log('Server running at http://localhost:3000');
 
 
+// var fs = require('fs');
+
+// console.log('Before');
+// fs.readFile('./', function (error,data) {
+//   console.log('** During! **');
+// });
+// console.log('After');
+
+
+
+// EXTERNAL HTTP CALLS
+
+    // var http = require('http');
+
+    // http.request({
+    //     host: 'www.google.com',
+    //     method: 'GET',
+    //     path: "/"
+    // }, 
+    // function(response) {
+    //     response.setEncoding("utf8");
+    //     response.on("readable", function() {
+    //         console.log(response.read())
+    //     });
+    // }).end();
+
+
+  
+// CommonJS, every file is module (by default)
+// Modules - Encapsulated Code (only share minimum)
+const names = require('./4-names')
+const sayHi = require('./5-utils')
+const data = require('./6-alt-flavor')
+require('./7-mind-grenade')
+sayHi('susan')
+sayHi(names.john)
+sayHi(names.peter)
+
+//FUNCTIONS
+
+    // const functionName = (arg) => {
+    // }
+
+//USE MODULES
+
+    // const varName = require('./moduleName') 
+
+//EXPORT MODULES
+
+    // module.exports = varName OR functionName OR objName
