@@ -76,21 +76,28 @@
 // Modules - Encapsulated Code (only share minimum)
 const names = require('./4-names')
 const sayHi = require('./5-utils')
-const data = require('./6-alt-flavor')
-require('./7-mind-grenade')
+const data  = require('./6-alt-flavor')
+const mind  = require('./7-mind-grenade')
+
 sayHi('susan')
 sayHi(names.john)
 sayHi(names.peter)
+sayHi(data.singlePerson.name)
+sayHi(data.items[1])
+
+//STRING
+
+    // console.log(`SOMETHING : ${VAR1 + VAR2}`)
 
 //FUNCTIONS
 
-    // const functionName = (arg) => {
+    // const FUNCTIONNAME = (ARG) => {
     // }
 
 //USE MODULES
 
-    // const varName = require('./moduleName') 
+    // const VARNAME = require('./MODULENAME') 
 
 //EXPORT MODULES
 
-    // module.exports = varName OR functionName OR objName
+    // module.exports = VARNAME or FUNCTIONNAME or OBJNAME
